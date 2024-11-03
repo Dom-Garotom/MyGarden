@@ -1,50 +1,77 @@
-# Welcome to your Expo app 👋
+# 🌱 MyGarden
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+MyGarden é um aplicativo de cuidados com plantas desenvolvido em **React Native** com o **Expo**. Ele tem como objetivo ajudar os usuários a lembrar de regar, adubar e cuidar das suas plantas com notificações personalizadas e funcionalidades avançadas de interação e personalização.
 
-## Get started
+## 🎯 Objetivo
 
-1. Install dependencies
+O MyGarden é mais do que um simples lembrete de cuidados. Ele oferece uma experiência completa com:
+- Lembretes personalizados para rega e cuidados com as plantas.
+- Diagnóstico avançado de problemas comuns das plantas.
+- Registro visual do progresso das plantas.
+- Informações detalhadas sobre temperatura e umidade, ajustadas ao ambiente do usuário.
 
-   ```bash
-   npm install
-   ```
+## 🚀 Funcionalidades
 
-2. Start the app
+- **Cadastro de plantas**: Os usuários podem adicionar suas plantas ao app e registrar informações relevantes.
+- **Notificação**: Notificações automáticas para lembrar de regar cada planta no horário escolhido.
+- **Diagnóstico**: Análise e instruções claras para resolução de problemas comuns de plantas.
+- **Conexão com API**: Acesso a dados detalhados de temperatura e umidade para fornecer informações precisas.
 
-   ```bash
-    npx expo start
-   ```
+## Figma
+Caso você queir dar uma olhada no design do projeto aqui está o link do figma do MyGarden    
 
-In the output, you'll find options to open the app in a
+**Link do figma**: https://www.figma.com/design/Qin65lBahkF23IHzEzc856/MyGarden?m=auto&t=GWM51klT1fFaVYGl-1
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Tecnologias
 
-## Get a fresh project
+- **React Native**
+- **Expo**
+- **Axios** (para APIs)
+- **React Navigation**
 
-When you're ready, run:
+## Etapas do Projeto e Tarefas
 
-```bash
-npm run reset-project
-```
+### Etapa 1: Planejamento
+❌ Definir escopo e funcionalidades principais do aplicativo.   
+❌ Criar wireframes das telas do aplicativo.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Etapa 2: Configuração do Ambiente
+- [ ] Instalar o Expo e configurar o ambiente de desenvolvimento.
+- [ ] Criar um repositório no GitHub.
 
-## Learn more
+### Etapa 3: Desenvolvimento
+#### 3.1. Cadastro de Plantas
+- [ ] Criar tela de cadastro de plantas.
+- [ ] Implementar lógica para armazenar e listar plantas.
 
-To learn more about developing your project with Expo, look at the following resources:
+#### 3.2. Funcionalidade "Regar-me"
+- [ ] Implementar funcionalidade de notificações.
+- [ ] Criar interface para configurar horários de rega.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+#### 3.3. Diagnóstico de Problemas
+- [ ] Criar seção de diagnóstico com perguntas e respostas.
+- [ ] Implementar lógica de diagnóstico com base nas respostas do usuário.
 
-## Join the community
+#### 3.4. Conexão com API
+- [ ] Integrar com API para dados meteorológicos.
+- [ ] Exibir informações de temperatura e umidade na interface.
 
-Join our community of developers creating universal apps.
+#### 3.5. Deep Linking
+- [ ] Implementar deep linking para acesso rápido a plantas.
+- [ ] Testar a funcionalidade de deep linking.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Etapa 4: Testes
+- [ ] Realizar testes unitários nas funcionalidades principais.
+- [ ] Realizar testes de usabilidade com usuários reais.
+
+### Etapa 5: Lançamento
+- [ ] Preparar o aplicativo para lançamento na Play Store e App Store.
+- [ ] Criar materiais de marketing e documentação.
+
+### Etapa 6: Manutenção e Atualizações
+- [ ] Coletar feedback dos usuários e implementar melhorias.
+- [ ] Planejar atualizações com novas funcionalidades.
+
+
+
