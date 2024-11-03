@@ -17,6 +17,11 @@ O MyGarden é mais do que um simples lembrete de cuidados. Ele oferece uma exper
 - **Diagnóstico**: Análise e instruções claras para resolução de problemas comuns de plantas.
 - **Conexão com API**: Acesso a dados detalhados de temperatura e umidade para fornecer informações precisas.
 
+## Figma
+Caso você queir dar uma olhada no design do projeto aqui está o link do figma do MyGarden    
+
+**Link do figma**: https://www.figma.com/design/Qin65lBahkF23IHzEzc856/MyGarden?m=auto&t=GWM51klT1fFaVYGl-1
+
 
 ## Tecnologias
 
