@@ -1,6 +1,7 @@
 export const color = {
     green: {
       bg: '#E6ECDE',
+      50:  '#7FCF73',
       100: '#CDF7C6',
       200: '#C3DEA9',
       300: '#00CD8F',
