@@ -15,15 +15,18 @@ export default function NavBar() {
 
 const styles = StyleSheet.create({
     container :{
-      backgroundColor: color.green.bg,
       flex: 1,
       padding: 24,
     },
-  
-  
+    
+    
     navBar:{
+      backgroundColor: color.green[200],
+      height: 62,
       flexDirection: "row",
-      justifyContent:"space-between"
+      justifyContent:"space-between",
+      alignItems: 'center',
+      paddingHorizontal: 24,
     }
   })
   
