@@ -11,8 +11,9 @@ export const color = {
     utils: {
       white: '#FFFFFF',
       black: '#090C0D',
-      subText: '#A7B9C7',
-      danger: '#F73333',
+      subText: '#A3B6A6',
+      danger: '#F72200',
+      pendente: '#f48686',
     },
   };
   
