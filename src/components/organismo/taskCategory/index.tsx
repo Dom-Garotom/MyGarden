@@ -20,6 +20,7 @@ export default function TaskCategory( {categoryName} : Props)  {
           plantName={item.plantName} 
           status={item.status}
           species={item.species}
+          category={categoryName}
         />
       ))}
       style={styles.container_list}

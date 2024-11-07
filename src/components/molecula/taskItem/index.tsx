@@ -1,18 +1,27 @@
-import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { Image, Text, TouchableOpacity, TouchableOpacityProps, View } from 'react-native'
 import Label from '../../atomo/label'
-import { color } from '@/src/styles/colors'
+import { styles } from './style'
+import ModalTaskItem from '../modalTaskItem'
 
-type Props = {
+type Props = TouchableOpacityProps & {
+  category: string
   plantName : string
   species : string
   status : "task" | "pendente" | "conclude"
+  onPres ?: () => void
 }
 
+export default function TaskItem( {plantName , species , category , status , onPres, ...props} : Props) {
+    const [modalOpen , setModalOpen] = useState(false);
 
-export default function TaskItem( {plantName , species , status} : Props) {
+    const onPresUser = () => {
+      setModalOpen(!modalOpen);
+      onPres && onPres();
+    }
+
     return (
-        <View style={styles.item}>
+        <TouchableOpacity {...props} onPress={onPresUser}  style={styles.item}>
 
             <Image
                 style={styles.Image_item}
@@ -25,41 +34,23 @@ export default function TaskItem( {plantName , species , status} : Props) {
             </View>
 
             <View>
-                <Label text={status} variant="task" />
+                <Label text={status} variant={status} />
             </View>
 
-        </View>
+
+            {modalOpen &&
+              <ModalTaskItem
+                category={category}
+                name={plantName}
+                specie={species}
+                status={status}
+                id=""
+              />
+            }
+
+        </TouchableOpacity>
     )
 }
 
 
 
-const styles = StyleSheet.create({  
-    item: {
-      flexDirection: "row",
-      alignItems: "center",
-      padding: 10,
-      height: 62
-    },
-  
-    Image_item: {
-      width: 45,
-      height: 45,
-      borderRadius: 100,
-      marginRight: 10,
-    },
-  
-    text_container: {
-      flex: 1,
-    },
-    text_title: {
-      fontWeight: '600',
-      fontSize: 14,
-    },
-    text_subTitle: {
-      fontWeight: "400",
-      fontSize: 13,
-      color: color.utils.subText
-    },
-})
-  
