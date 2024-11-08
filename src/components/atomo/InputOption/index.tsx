@@ -1,5 +1,5 @@
 import { color } from "@/src/styles/colors";
-import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { useState } from "react";
 
 type Props = TouchableOpacityProps & {
@@ -11,8 +11,13 @@ export default function InpuOption({ text, onChange, ...props }: Props) {
     const [isSelected, setIsSelected] = useState(false);
 
     const handlePress = () => {
-        setIsSelected(!isSelected);
-        onChange(text);
+        if (isSelected){
+            setIsSelected(!isSelected);
+            onChange("")
+        } else {
+            onChange(text);
+            setIsSelected(!isSelected);
+        }
     };
 
     return (
