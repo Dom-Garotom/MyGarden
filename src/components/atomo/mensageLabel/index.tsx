@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     backgroundColor: color.utils.white,
     borderRadius: 10,
     paddingHorizontal: 18,
-    paddingVertical: 15
+    paddingVertical: 15,
+    marginVertical: 10
   },
 
   titulo: {

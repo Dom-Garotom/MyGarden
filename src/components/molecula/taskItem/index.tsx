@@ -8,11 +8,11 @@ type Props = TouchableOpacityProps & {
   category: string
   plantName : string
   species : string
-  status : "task" | "pendente" | "conclude"
+  status : string
   onPres ?: () => void
 }
 
-export default function TaskItem( {plantName , species , category , status , onPres, ...props} : Props) {
+export default function TaskItem( {plantName , species , category , status = "pendente", onPres, ...props} : Props) {
     const [modalOpen , setModalOpen] = useState(false);
 
     const onPresUser = () => {

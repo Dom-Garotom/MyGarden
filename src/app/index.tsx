@@ -1,11 +1,34 @@
-import { Text , View } from "react-native"
+import { SafeAreaView, StyleSheet, View } from "react-native"
+import { color } from "../styles/colors"
+import NavBar from "../components/molecula/navBar"
+import AllTaskContainer from "../components/organismo/allTaskContainer"
+
 
 export default function index() {
   return (
-    <View>
-        <Text>
-            Hello world
-        </Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content} >
+        <AllTaskContainer />
+      </View>
+      <NavBar />
+    </SafeAreaView>
   )
 }
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: color.green.bg,
+    flex: 1,
+    paddingBottom: 20,
+  },
+
+  content: {
+    height: "95%",
+    paddingHorizontal: 24,
+    paddingBottom: 3,
+    width: "100%",
+  },
+
+})
