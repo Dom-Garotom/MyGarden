@@ -11,14 +11,10 @@ type Props = TouchableOpacityProps & {
 }
 
 export default function ButtonIten({ icon, size,  select, ...props }: Props) {
-    const [isCLicked , setClick] = useState(false)
+    const [isCLicked , setClick] = useState(select)
 
-    useEffect( () =>{
-        select && setClick(true)
-    }, [])
-    
     return (
-        <TouchableOpacity style={isCLicked ? styles.button : styles.buttonSelected} onPressOut={ () => select ? ("") : setClick(!isCLicked)} {...props}>
+        <TouchableOpacity style={isCLicked ? styles.buttonSelected : styles.button } onPressOut={ () => setClick(!isCLicked)} {...props}>
             <MaterialIcons name={icon} size={size} />
         </TouchableOpacity>
     )
@@ -30,7 +26,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 40,
         padding: 13,
-        backgroundColor: color.utils.white,
+        backgroundColor: color.green[200],
         borderRadius: 13,
         alignItems: "center"
     },
@@ -39,7 +35,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 40,
         padding: 13,
-        backgroundColor: color.green.bg,
+        backgroundColor: color.utils.white,
         borderRadius: 13,
         alignItems: "center"
     }
