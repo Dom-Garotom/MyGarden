@@ -2,6 +2,7 @@ import { SafeAreaView, StyleSheet, View } from "react-native"
 import { color } from "../styles/colors"
 import NavBar from "../components/molecula/navBar"
 import AllTaskContainer from "../components/organismo/allTaskContainer"
+import ButtonOpenModal from "../components/atomo/buttonOpenModal"
 
 
 export default function index() {
@@ -10,6 +11,7 @@ export default function index() {
       <View style={styles.content} >
         <AllTaskContainer />
       </View>
+      <ButtonOpenModal/>
       <NavBar />
     </SafeAreaView>
   )
