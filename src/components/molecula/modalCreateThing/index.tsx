@@ -3,6 +3,7 @@ import { color } from '@/src/styles/colors'
 import { MaterialIcons } from '@expo/vector-icons'
 import { Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
 import ItenModal from '../../atomo/itenModal'
+import { router } from 'expo-router'
 
 type Props = {
     close : ( prev : false ) => void
@@ -24,11 +25,13 @@ export default function ModalCreateThing( { close } : Props) {
                 <ItenModal text='Adicionar uma planta'
                     rigth={22}
                     bottom={192}
+                    onPress={ () => router.push("/addPlant")}
                 />
 
                 <ItenModal text='Adicionar uma task'
                     rigth={22}
                     bottom={142}
+                    onPress={ () => router.push("/addTask")}
                 />
             </View>
         </Modal>
