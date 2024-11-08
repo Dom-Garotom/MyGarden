@@ -1,43 +1,161 @@
-import UUID from "react-native-uuid"
+import UUID from "react-native-uuid";
 
-type Props = {
+export type Plants = {
   id: string;
   plantName: string;
   species: string;
-  status: "task" | "pendente" | "conclude";
+  status: "pendente" | "conclude";
 };
 
-
-
-export const plants: Props[] = [
+export const TaskCategories = [
   {
     id: UUID.v4() as string,
-    plantName: "Rose",
-    species: "Rosa",
-    status: "task"
+    categoryName: "Regar",
+    habits: [
+      {
+        id: UUID.v4() as string,
+        plantName: "Rose",
+        species: "Rosa",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Lily",
+        species: "Lilium",
+        status: "conclude",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Rose",
+        species: "Rosa",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Lily",
+        species: "Lilium",
+        status: "conclude",
+      },
+    ],
   },
   {
     id: UUID.v4() as string,
-    plantName: "Lily",
-    species: "Lilium",
-    status: "pendente"
+    categoryName: "Adubar",
+    habits: [
+      {
+        id: UUID.v4() as string,
+        plantName: "Sunflower",
+        species: "Helianthus",
+        status: "conclude",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Orchid",
+        species: "Orchidaceae",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Sunflower",
+        species: "Helianthus",
+        status: "conclude",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Orchid",
+        species: "Orchidaceae",
+        status: "pendente",
+      },
+    ],
   },
   {
     id: UUID.v4() as string,
-    plantName: "Sunflower",
-    species: "Helianthus",
-    status: "conclude"
+    categoryName: "Pegar Sol",
+    habits: [
+      {
+        id: UUID.v4() as string,
+        plantName: "Tulip",
+        species: "Tulipa",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Sunflower",
+        species: "Helianthus",
+        status: "conclude",
+      },
+    ],
   },
   {
     id: UUID.v4() as string,
-    plantName: "Orchid",
-    species: "Orchidaceae",
-    status: "task"
+    categoryName: "Tirar do Sol",
+    habits: [
+      {
+        id: UUID.v4() as string,
+        plantName: "Rose",
+        species: "Rosa",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Lily",
+        species: "Lilium",
+        status: "conclude",
+      },
+    ],
   },
   {
     id: UUID.v4() as string,
-    plantName: "Tulip",
-    species: "Tulipa",
-    status: "pendente"
-  }
+    categoryName: "Trocar os Potes",
+    habits: [
+      {
+        id: UUID.v4() as string,
+        plantName: "Orchid",
+        species: "Orchidaceae",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Tulip",
+        species: "Tulipa",
+        status: "conclude",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Sunflower",
+        species: "Helianthus",
+        status: "conclude",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Orchid",
+        species: "Orchidaceae",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Orchid",
+        species: "Orchidaceae",
+        status: "pendente",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Tulip",
+        species: "Tulipa",
+        status: "conclude",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Sunflower",
+        species: "Helianthus",
+        status: "conclude",
+      },
+      {
+        id: UUID.v4() as string,
+        plantName: "Orchid",
+        species: "Orchidaceae",
+        status: "pendente",
+      },
+    ],
+  },
 ];
