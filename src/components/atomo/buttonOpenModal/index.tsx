@@ -1,8 +1,8 @@
 import { color } from '@/src/styles/colors'
 import { MaterialIcons } from '@expo/vector-icons'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
-import ButtonModal from '../../molecula/buttonModal'
 import { useState } from 'react'
+import ModalCreateThing from '../../molecula/modalCreateThing'
 
 export default function ButtonOpenModal() {
     const [openModal, setOpen] = useState(false)
@@ -16,7 +16,7 @@ export default function ButtonOpenModal() {
             }
 
             {openModal &&
-                <ButtonModal close={setOpen} />
+                <ModalCreateThing close={setOpen} />
             }
         </View>
     )
