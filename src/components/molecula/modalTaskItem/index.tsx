@@ -11,11 +11,11 @@ type Props = {
     category: string
     name: string
     specie: string
-    status: "task" | "pendente" | "conclude"
+    status: string
 }
 
 
-export default function ModalTaskItem({ category, name, specie, id  , status}: Props) {
+export default function ModalTaskItem({ category, name, specie, id  , status = "pendente"}: Props) {
     const [close, setClose] = useState(true)
 
     return (

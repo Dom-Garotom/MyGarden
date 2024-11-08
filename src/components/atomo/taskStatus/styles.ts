@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
       paddingHorizontal: 18,
       backgroundColor: color.utils.white,
       gap: 10,
+      marginVertical: 10,
     },
   
     container_text: {

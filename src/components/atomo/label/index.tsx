@@ -3,7 +3,7 @@ import { styles } from "./styles";
 
 type Props = {
   text: string
-  variant: "task" | "pendente" | "conclude"
+  variant: string
 }
 
 export default function Label({ text, variant }: Props) {
