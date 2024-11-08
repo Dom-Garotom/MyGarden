@@ -13,24 +13,29 @@ export default function MensageLabel({ text, titulo }: Props) {
       {titulo &&
         <Text style={styles.titulo}>{titulo}</Text>
       }
-      <Text>{text}</Text>
+      <Text style={styles.text}>{text}</Text>
     </View>
   )
 }
 const styles = StyleSheet.create({
   Container: {
-    width: "100%",
+    alignSelf: "flex-start",
     backgroundColor: color.utils.white,
     borderRadius: 10,
     paddingHorizontal: 18,
-    paddingVertical: 15,
-    marginVertical: 10
+    paddingVertical: 10,
   },
 
   titulo: {
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: "700",
     color: color.green[50]
-  }
+  },
+
+  text:{
+    fontWeight: "500",
+    color: color.gray[600]
+  },
+
 })
 
