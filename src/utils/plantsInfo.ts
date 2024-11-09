@@ -1,4 +1,19 @@
+import UUID from "react-native-uuid";
+
 export type PlantBase = {
+  species: string;
+  recommended: boolean;
+  difficulty: "facil" | "medio" | "dificil";
+  water: "low" | "medium" | "high";
+  sun: "low" | "medium" | "high";
+  toxic: boolean;
+  location: string;
+};
+
+
+export type Plant = {
+  id: string;
+  name: string
   species: string;
   recommended: boolean;
   difficulty: "facil" | "medio" | "dificil";
@@ -54,6 +69,7 @@ export function createPlant( name : string , species: string) {
   if (plantData) {
 
     return {
+      id : UUID.v4() as string,
       name: name,
       ...plantData,
     };
