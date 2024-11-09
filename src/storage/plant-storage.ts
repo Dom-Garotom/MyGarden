@@ -18,7 +18,7 @@ export async function addPlant(namePlant: string, species: string) {
         const data = await AsyncStorage.getItem(key_plant_storage);
         let response = data ? JSON.parse(data) : [];
 
-        const newPlant = createPlant(namePlant, species);
+        const newPlant = await createPlant(namePlant, species);
         newPlant ? response.push(newPlant) : response;
 
         await AsyncStorage.setItem(key_plant_storage, JSON.stringify(response))
