@@ -2,6 +2,8 @@
 
 MyGarden é um aplicativo de cuidados com plantas desenvolvido em **React Native** com **Expo**. Ele ajuda os usuários a gerenciar o cuidado de suas plantas, oferecendo lembretes personalizados, notificações automatizadas e ferramentas de diagnóstico para monitorar o bem-estar das plantas.
 
+<img src="./assets/images/cover.png" width="100%"/>
+
 ## 🎯 Objetivo
 
 O MyGarden oferece uma experiência completa e intuitiva para o cuidado de plantas:
