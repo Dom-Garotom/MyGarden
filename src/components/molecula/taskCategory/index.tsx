@@ -8,7 +8,9 @@ type Props = {
     id: string;
     plantName: string;
     species: string;
-    status: string
+    status: string 
+    time: string
+    data: string
   }[]
 }
 
