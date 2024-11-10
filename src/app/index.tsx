@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     height: "95%",
     paddingHorizontal: 24,
     paddingBottom: 3,
+    paddingTop: 10,
     width: "100%",
   },
 

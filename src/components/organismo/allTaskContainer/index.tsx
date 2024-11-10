@@ -16,10 +16,11 @@ export default function AllTaskContainer() {
   )
 
   const handleAllTask = async () => {
-    const result = await getTask();
+    const result: Task[] = await getTask();
+    const filter = result.filter( item => item.habits && item.habits.some( habit => habit.status === "pendente"))
 
-    if (result){
-      setData(result)
+    if (filter){
+      setData(filter)
     }
   }
 
