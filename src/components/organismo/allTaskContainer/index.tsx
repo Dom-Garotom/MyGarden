@@ -3,14 +3,17 @@ import TaskCategory from "../../molecula/taskCategory";
 import TaskStatus from "../../atomo/taskStatus";
 import MensageLabel from "../../atomo/mensageLabel";
 import { getTask, Task } from "@/src/storage/task-storage";
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
+import { useFocusEffect } from "expo-router";
 
 export default function AllTaskContainer() {
   const [data , setData] = useState<Task[]>([])
 
-  useEffect( () => {
-    handleAllTask();
-  }, [])
+  useFocusEffect(
+    useCallback(() =>{
+      handleAllTask();
+    }, [])
+  )
 
   const handleAllTask = async () => {
     const result = await getTask();

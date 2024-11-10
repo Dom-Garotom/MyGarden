@@ -17,7 +17,7 @@ export type Task = {
 }
 
 
-const key_task_storage = "task";
+export const key_task_storage = "task";
 
 export async function saveToStorage(key: string, value: any): Promise<void> {
     try {
