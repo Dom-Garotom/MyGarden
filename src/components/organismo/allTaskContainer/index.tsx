@@ -1,10 +1,30 @@
-import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+import { FlatList,  View } from "react-native";
 import TaskCategory from "../../molecula/taskCategory";
-import { TaskCategories } from "@/src/utils/plants";
 import TaskStatus from "../../atomo/taskStatus";
 import MensageLabel from "../../atomo/mensageLabel";
+import { getTask, Task } from "@/src/storage/task-storage";
+import { useCallback, useState } from "react";
+import { useFocusEffect } from "expo-router";
 
 export default function AllTaskContainer() {
+  const [data , setData] = useState<Task[]>([])
+
+  useFocusEffect(
+    useCallback(() =>{
+      handleAllTask();
+    }, [])
+  )
+
+  const handleAllTask = async () => {
+    const result = await getTask();
+
+    if (result){
+      console.log(result);
+      
+      setData(result)
+    }
+  }
+
   return (
       <FlatList
         ListHeaderComponent={
@@ -21,7 +41,7 @@ export default function AllTaskContainer() {
 
         }
 
-        data={TaskCategories}
+        data={data.filter(item => item.habits && Array.isArray(item.habits))}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => ((
           <TaskCategory
