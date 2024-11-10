@@ -59,8 +59,52 @@ const plantSpeciesData: Record<string, PlantBase> = {
     sun: "medium",
     toxic: true,
     location: "América Central"
+  },
+  "Peperômia": {
+    species: "Peperômia",
+    recommended: true,
+    difficulty: "facil",
+    water: "low",
+    sun: "low",
+    toxic: false,
+    location: "América Central e do Sul"
+  },
+  "Nerium": {
+    species: "Nerium",
+    recommended: false,
+    difficulty: "dificil",
+    water: "medium",
+    sun: "high",
+    toxic: true,
+    location: "Mediterrâneo e Ásia"
+  },
+  "Hera inglesa": {
+    species: "Hera inglesa",
+    recommended: true,
+    difficulty: "medio",
+    water: "medium",
+    sun: "low",
+    toxic: true,
+    location: "Europa e Ásia Ocidental"
+  },
+  "Cactos": {
+    species: "Cactos",
+    recommended: true,
+    difficulty: "facil",
+    water: "low",
+    sun: "high",
+    toxic: false,
+    location: "América"
+  },
+  "Palmeira de jardim": {
+    species: "Palmeira de jardim",
+    recommended: true,
+    difficulty: "medio",
+    water: "medium",
+    sun: "medium",
+    toxic: false,
+    location: "Regiões tropicais"
   }
- 
 };
 
 export function createPlant( name : string , species: string) {
