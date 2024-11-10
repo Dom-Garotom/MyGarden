@@ -3,9 +3,22 @@ import { color } from "../styles/colors"
 import NavBar from "../components/molecula/navBar"
 import AllTaskContainer from "../components/organismo/allTaskContainer"
 import ButtonOpenModal from "../components/atomo/buttonOpenModal"
+import * as Notifications from "expo-notifications"
+
+
 
 
 export default function index() {
+
+  Notifications.setNotificationHandler({
+    handleNotification: async  () => ({
+      shouldPlaySound:true,
+      shouldSetBadge: true,
+      shouldShowAlert: true,
+    }),
+  })
+
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content} >

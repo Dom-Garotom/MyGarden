@@ -31,6 +31,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "df186fea-220d-40b4-8990-e28596394d22"
+      }
+    },
+    "owner": "dom-gean"
   }
 }

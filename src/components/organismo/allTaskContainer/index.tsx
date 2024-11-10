@@ -19,8 +19,6 @@ export default function AllTaskContainer() {
     const result = await getTask();
 
     if (result){
-      console.log(result);
-      
       setData(result)
     }
   }
