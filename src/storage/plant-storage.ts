@@ -1,9 +1,10 @@
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import { createPlant } from "../utils/plantsInfo";
+import { createPlant, Plant } from "../utils/plantsInfo";
+import { saveToStorage } from "./task-storage";
 
 const key_plant_storage = "plant";
 
-export async function getPlant() {
+export async function getPlant(): Promise<[Plant]> {
     try {
         const data = await AsyncStorage.getItem(key_plant_storage);
         const response = data ? JSON.parse(data) : [];
@@ -21,7 +22,7 @@ export async function addPlant(namePlant: string, species: string) {
         const newPlant = await createPlant(namePlant, species);
         newPlant ? response.push(newPlant) : response;
 
-        await AsyncStorage.setItem(key_plant_storage, JSON.stringify(response))
+        await saveToStorage(key_plant_storage, response)
         return true;
     } catch (error) {
         console.error(error);
