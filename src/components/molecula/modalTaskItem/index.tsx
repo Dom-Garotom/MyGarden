@@ -44,7 +44,7 @@ export default function ModalTaskItem({ category, name, specie, id  , status = "
         const Tasks : Task[] = await getTask();
         const remove =  Tasks.map( item => {
             if ( item.categoryName === category ){
-                const itensAptos = item.habits.filter( habit => habit.plantName !== name && habit.species === specie);
+                const itensAptos = item.habits.filter( habit => habit.plantName !== name && habit.species !== specie);
 
                 return {
                     ...item,
@@ -89,7 +89,7 @@ export default function ModalTaskItem({ category, name, specie, id  , status = "
 
                     <View style={styles.optionContainer}>
                         <Option name="Excluir" icon="delete-sweep" variant="secundary"  onPress={() => removeTask()} />
-                        <Option name="Concluir" icon="done-all" onPress={() => concludeTask()} />
+                        <Option name="Concluir" icon="done-all" onPress={() => removeTask()} />
                     </View>
                 </View>
 

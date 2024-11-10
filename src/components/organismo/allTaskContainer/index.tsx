@@ -8,6 +8,7 @@ import { useFocusEffect } from "expo-router";
 
 export default function AllTaskContainer() {
   const [data , setData] = useState<Task[]>([])
+  const [conlude , setConclude] = useState<"danger" | "done">("done")
 
   useFocusEffect(
     useCallback(() =>{
@@ -16,11 +17,19 @@ export default function AllTaskContainer() {
   )
 
   const handleAllTask = async () => {
-    const result = await getTask();
+    const result: Task[] = await getTask();
+    const isConclude = result.find( item => item.habits && item.habits.some( habit => habit.status === "pendente"));
 
     if (result){
-      setData(result)
+      setData(result);
     }
+
+    if (isConclude){
+      setConclude("danger");
+      return
+    }
+
+    setConclude("done");
   }
 
   return (
@@ -33,7 +42,7 @@ export default function AllTaskContainer() {
           />
 
           <TaskStatus
-          variant="done"
+          variant={conlude}
           />
           </View>
 
