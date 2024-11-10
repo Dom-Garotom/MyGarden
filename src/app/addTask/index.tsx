@@ -8,12 +8,47 @@ import InputDate from '@/src/components/atomo/InputDate'
 import { styles } from './style'
 import { color } from '@/src/styles/colors'
 import { addTask } from '@/src/storage/task-storage'
+import * as Notifications from "expo-notifications"
 
 export default function AddTAskPage() {
     const [category, setCategory] = useState("")
     const [name, setName] = useState("")
     const [date, setDate] = useState("")
     const [time, setTime] = useState("")
+
+
+    const handleNotification = async () =>{
+        const [dia , mes , ano] = date.split('/').map(Number) 
+        const [hora, minuto] = time.split(":").map(Number)
+        const dataTask = new Date(2000 + ano , mes - 1 , dia , hora , minuto );
+
+        console.log("data - ", date)
+        console.log(time)
+
+        console.log(dataTask)
+        console.log("hora - " , hora)
+        console.log("minuto - " , minuto)
+        console.log("dia - " , dia)
+        console.log("mes - " , mes)
+        console.log("ano - " , ano)
+
+        if (dataTask <= new Date()) {
+            Alert.alert("Erro", "A data e hora devem estar no futuro.");
+            return;
+        }
+
+        await Notifications.scheduleNotificationAsync({
+            content:{
+                title:"My garden",
+                body: "Já lembrou de regar as suas plantas hoje?"
+            },
+            trigger: dataTask,
+        })
+
+        Alert.alert("Notificação Agendada", "Sua notificação foi agendada com sucesso!");
+    }
+
+
 
     const handleSubmit = async () => {
         if (!category) {
@@ -27,8 +62,6 @@ export default function AddTAskPage() {
         }
 
         const result = await addTask(name, date , time ,category);
-        console.log(result);
-        
 
         if (result) {
             Alert.alert("Task Adicionada", "Sua nova task foi adicionada com sucesso.")
@@ -37,8 +70,10 @@ export default function AddTAskPage() {
             Alert.alert("Erro ao Adicionar", "Infelizmente não foi possivel adicionar a sua nova Task")
             router.back();
         }
-
     }
+
+
+
 
     return (
         <ScrollView style={styles.page}>
@@ -80,7 +115,12 @@ export default function AddTAskPage() {
                     />
                 </View>
 
-                <ButtonSubmit title='Adicionar' onPress={handleSubmit} />
+                <ButtonSubmit title='Adicionar' onPress={ async () => {
+                    handleNotification();
+                    handleSubmit();
+                }} />
+
+
             </View>
         </ScrollView>
     )

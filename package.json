@@ -38,7 +38,9 @@
     "react-native-screens": "3.31.1",
     "react-native-uuid": "^2.0.2",
     "react-native-web": "~0.19.10",
-    "uuid": "^11.0.2"
+    "uuid": "^11.0.2",
+    "expo-notifications": "~0.28.19",
+    "expo-device": "~6.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -2,7 +2,7 @@ import { addTask } from '@/src/storage/task-storage';
 import { color } from '@/src/styles/colors';
 import { MaterialIcons } from '@expo/vector-icons';
 import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type Props = {
@@ -14,7 +14,11 @@ export default function InputDate({ returnDate , type}:Props) {
     const [date, setDate] = useState(new Date()); 
     const [show, setShow] = useState(false); 
 
-    const onChange = (event : DateTimePickerEvent, selectedDate ?: Date) => {
+    useEffect(()=>{
+        onChange( new Date )
+    },[])
+
+    const onChange = ( selectedDate ?: Date) => {
         const currentDate = selectedDate || date;
         setShow(false); 
         setDate(currentDate);
@@ -47,7 +51,7 @@ export default function InputDate({ returnDate , type}:Props) {
                     value={date}
                     mode={type}
                     display="compact"
-                    onChange={onChange}
+                    onChange={ (event , date) => onChange(date)}
                 />
             )}
         </View>
