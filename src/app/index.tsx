@@ -25,7 +25,7 @@ export default function index() {
         <AllTaskContainer />
       </View>
       <ButtonOpenModal/>
-      <NavBar />
+      {/* <NavBar /> */}
     </SafeAreaView>
   )
 }
